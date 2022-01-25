@@ -48,20 +48,11 @@ public class ProdutoController {
 	public ResponseEntity<List<Produto>> GetByNome (@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeProdutoContainingIgnoreCase(nome));
 	}
-	
 	@PostMapping
 	public ResponseEntity<Produto> post(@RequestBody Produto produto) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
 	}
-
-	@PutMapping
-	public ResponseEntity<Produto> put(@RequestBody Produto produto) {
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(produto));
-	}
-
-	@DeleteMapping("/{id}")
-	public void delete(@PathVariable long id) {
-		repository.deleteById(id);
-	}
-
+	
+	
+	
 }

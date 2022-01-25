@@ -8,9 +8,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-/**	@author Cesar
- * @autor Pedro Lucas
- *  @version v1 (Desenvolvimento Model Categoria (atributos e getters and setters)
+/**	@author Cesar / Pedro
+ *  @version v2 (Desenvolvimento Model Categoria: atributos, anotações e getters/setters)
  *  @since 25/01/2022
  * */
 

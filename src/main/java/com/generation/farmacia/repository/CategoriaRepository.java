@@ -7,9 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.generation.farmacia.model.Categoria;
 
-/**@author Cesar
- * @autor Pedro Lucas
- * @version v1 (Desenvolvimento Repository Categoria - parâmetros de JpaRepository e query method) 
+/**@author Cesar / Pedro
+ * @version v2 (Desenvolvimento Repository Categoria: parâmetros de JpaRepository, query method e anotação) 
  * @since 25/01/2022 
  * */
 

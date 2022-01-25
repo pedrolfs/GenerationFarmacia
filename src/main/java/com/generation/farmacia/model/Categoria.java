@@ -1,16 +1,33 @@
 package com.generation.farmacia.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**	@author Cesar
+ * @autor Pedro Lucas
  *  @version v1 (Desenvolvimento Model Categoria (atributos e getters and setters)
  *  @since 25/01/2022
  * */
 
+@Entity
+@Table (name = "tb_categoria")
 public class Categoria {
 	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private long idCategoria;
 	
+	@NotNull
+	@Size (min = 3, max = 45)
 	private String nomeCategoria;
 	
+	@NotNull
+	@Size (min = 3, max = 255)
 	private String descricaoCategoria;
 
 	public long getIdCategoria() {

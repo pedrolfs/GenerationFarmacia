@@ -1,5 +1,9 @@
 package com.generation.farmacia.model;
 
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 public class Produto {
 
 	private Long idProduto;

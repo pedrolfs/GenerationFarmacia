@@ -11,6 +11,11 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**	@author Edgar Soares / Edilaine
+ *  @version v2 (Desenvolvimento Model Categoria: atributos, anotações e getters/setters)
+ *  @since 25/01/2022
+ * */
+
 @Entity
 @Table (name = "tb_produtos")
 

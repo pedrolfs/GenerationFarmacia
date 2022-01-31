@@ -15,13 +15,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.generation.farmacia.model.Categoria;
 import com.generation.farmacia.model.Produto;
 import com.generation.farmacia.repository.ProdutoRepository;
 
-/**@author Edgar Soares, Edilaine
- * @version v1 - Desenvolvimento Controller Produto (crud básico)
- * @since 25/01/2022 
+/**
+ * @author Edgar Soares Marinho
+ * @author Edilaine Souza
+ * @version 0.0.1
+ * @since 0.0.1 - 25/01/2022
+ * 
+ * Desenvolvimento Controller Produto (crud básico)
+ * 
  * */ 
 
 @RestController
@@ -39,17 +43,19 @@ public class ProdutoController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> GetById(@PathVariable long id) {
-	 return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Produto>> GetByNome (@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeProdutoContainingIgnoreCase(nome));
 	}
+	
 	@PostMapping
 	public ResponseEntity<Produto> post(@RequestBody Produto produto) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
 	}
+	
 	@PutMapping
 	public ResponseEntity<Produto> put(@RequestBody Produto produto) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(produto));

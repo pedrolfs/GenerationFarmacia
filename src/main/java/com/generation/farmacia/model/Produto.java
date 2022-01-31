@@ -11,15 +11,21 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-/**	@author Edgar Soares / Edilaine
- *  @version v2 (Desenvolvimento Model Categoria: atributos, anotações e getters/setters)
- *  @since 25/01/2022
+/**	
+ * @author Edgar Soares Marinho
+ * @author Edilaine Souza
+ * @version 0.0.1
+ * @since 0.0.1 - 25/01/2022
+ * 
+ * Desenvolvimento Model Categoria: atributos, anotações e getters/setters.
+ * 
  * */
 
 @Entity
 @Table (name = "tb_produtos")
 
 public class Produto {
+	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idProduto;
@@ -29,7 +35,6 @@ public class Produto {
 	private String nomeProduto;
 	
 	@NotNull
-	@Size()
 	private Double valorProduto;
 	
 	@NotNull

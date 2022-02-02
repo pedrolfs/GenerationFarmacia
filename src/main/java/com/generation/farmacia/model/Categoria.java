@@ -14,9 +14,14 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-/**	@author Cesar / Pedro
- *  @version v2 (Desenvolvimento Model Categoria: atributos, anotações e getters/setters)
- *  @since 25/01/2022
+/**	
+ * @author Cesar Augusto
+ * @author Pedro Lucas
+ * @version 0.0.1
+ * @since 0.0.1 - 25/01/2022
+ * 
+ * Desenvolvimento Model Categoria: atributos, anotações e getters/setters
+ * 
  * */
 
 @Entity
@@ -25,7 +30,7 @@ public class Categoria {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long idCategoria;
+	private Long idCategoria;
 	
 	@NotNull
 	@Size (min = 3, max = 45)
@@ -39,11 +44,11 @@ public class Categoria {
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produtos;
 
-	public long getIdCategoria() {
+	public Long getIdCategoria() {
 		return idCategoria;
 	}
 
-	public void setIdCategoria(long idCategoria) {
+	public void setIdCategoria(Long idCategoria) {
 		this.idCategoria = idCategoria;
 	}
 

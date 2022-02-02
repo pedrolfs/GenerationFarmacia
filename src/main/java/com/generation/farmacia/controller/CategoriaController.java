@@ -18,9 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.farmacia.model.Categoria;
 import com.generation.farmacia.repository.CategoriaRepository;
 
-/**@author Cesar, Pedro Lucas
- * @version v1 - Desenvolvimento Controller Categoria (adição de getAll, getbyId e getNomecategoria)
- * @since 25/01/2022 
+/**
+ * @author Cesar Augusto
+ * @author Pedro Lucas
+ * @version 0.0.1
+ * @since 0.0.1 - 25/01/2022 
+ * 
+ * Desenvolvimento da Categoria Controller, endpoints pros métodos getAll, getbyId, getByNomeCategoria, post, put e delete.
+ * 
  * */ 
 
 @RestController
@@ -37,13 +42,13 @@ public class CategoriaController {
 	}
 	
 	@GetMapping("/{idcategoria}")
-	public ResponseEntity<Categoria> GetById(@PathVariable long idCategoria) {
-		return repository.findById(idCategoria).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	public ResponseEntity<Categoria> GetById(@PathVariable long idcategoria) {
+		return repository.findById(idcategoria).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/nomecategoria/{nomecategoria}")
-	public ResponseEntity<List<Categoria>> GetByNomecategoria (@PathVariable String nomecategoria) {
-		return ResponseEntity.ok(repository.findAllByNomeCategoriaCotainingIgnoreCase(nomecategoria));
+	public ResponseEntity<List<Categoria>> GetByNomeCategoria (@PathVariable String nomecategoria) {
+		return ResponseEntity.ok(repository.findAllByNomeCategoriaContainingIgnoreCase(nomecategoria));
 	}
 	
 	@PostMapping
@@ -60,4 +65,5 @@ public class CategoriaController {
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
 	}
+	
 }
